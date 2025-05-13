@@ -1,8 +1,8 @@
-#include <cstdint>
+#include <stdint.h>
+#include "../include/circ_buffer.h"
 
 typdef struct {
-    uint8_t* memory;
-    
+    circ_buffer memory;
 
 }remu;
 

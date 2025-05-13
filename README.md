@@ -7,6 +7,12 @@ started with.
 
 
 ## Getting started
+To compile simply use cmake.
+
+```bash
+cmake -B build/
+```
+
 
 
 ## Who is this project for
