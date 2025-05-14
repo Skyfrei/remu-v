@@ -10,4 +10,4 @@ file(GLOB_RECURSE INCL
 )
 
 add_executable(REMU-V WIN32 ${SRC})
-target_include_directories(REMU-V PRIVATE ${SRC})
+target_include_directories(REMU-V PRIVATE ${CMAKE_SOURCE_DIR}/include)
