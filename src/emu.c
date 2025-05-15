@@ -81,10 +81,10 @@ static void* check_register(remu* emu, void* reg){
 }
 
 static size_t parse_assembly(const char* file_name){
-    FILE* file = fopen(file_name, "r"); 
-    if (!file){
-        printf("Failed to open file");
-    }
+    //FILE* file = fopen(file_name, "r"); 
+    //if (!file){
+    //    printf("Failed to open file");
+    //}
 
     return 2;
 }

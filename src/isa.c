@@ -1,4 +1,5 @@
 #include <isa.h>
+#include <emu.h>
 
 void load_immediate(remu* emu, void* command1, void* command2){
     void* reg = get_temporary_memory(emu, false);

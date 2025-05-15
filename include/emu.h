@@ -17,7 +17,7 @@ typedef void (*opCodeHandler)(remu* emu, void* command1, void* command2);
 
 void init_remu(remu* emu);
 void load_instruction(remu* emu, OPCODE op, void* command1, void* command2);
-void* get_temporary_memory(remu* emu, bool floating)
+void* get_temporary_memory(remu* emu, bool floating);
 static void free_memory(remu* emu);
 static void change_register();
 static int set_memory();
