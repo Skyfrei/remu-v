@@ -50,6 +50,7 @@ static void free_register(remu* emu, bool floating){
     }
 }
 
+
 void load_instruction(remu* emu, OPCODE op, void* command1, void* command2){
     opCodeHandler operation = (opCodeHandler)map_opcode(emu, op);
     operation(emu, command1, command2);
@@ -63,6 +64,22 @@ static void* map_opcode(remu* emu, OPCODE op){
             return add;
         case X0:
             return register_0;
+        case SUB:
+            return sub;
+        case XOR:
+            return xor;
+        case OR:
+            return or;
+        case AND:
+            return and;
+        case SLL:
+            return sll;
+        case SRA:
+            return sra;
+        case SLT:
+            return slt;
+        case SLTU:
+            return sltu;
     }
 }
 

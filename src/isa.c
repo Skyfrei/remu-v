@@ -13,6 +13,34 @@ void add(remu* emu, void* command1, void* command2){
 
 }
 
+void sub(remu* emu, void* command1, void* command2){
+}
+
+void xor(remu* emu, void* command1, void* command2){
+}
+
+void or(remu* emu, void* command1, void* command2){
+}
+
+void and(remu* emu, void* command1, void* command2){
+}
+
+void sll(remu* emu, void* command1, void* command2){
+}
+
+void srl(remu* emu, void* command1, void* command2){
+}
+
+void sra(remu* emu, void* command1, void* command2){
+}
+
+void slt(remu* emu, void* command1, void* command2){
+}
+
+void sltu(remu* emu, void* command1, void* command2){
+}
+
+
 void delete(remu* emu, void* command1, void* command2){
 
 }
