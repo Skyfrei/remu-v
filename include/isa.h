@@ -9,16 +9,24 @@
     #define IALIGN 16
 #endif
 
-struct remu;
+#include <stdbool.h>
+#include <emu.h>
+
 
 typedef enum {
+    X0,
     LI,
     ADD,
     
 }OPCODE;
 
-void load_immediate(struct remu* emu, void* command1, void* command2);
-void add(struct remu* emu, void* command1, void* command2);
+typedef struct remu remu;
+
+
+void load_immediate(remu* emu, void* command1, void* command2);
+void add(remu* emu, void* command1, void* command2);
+void delete(remu* emu, void* command1, void* command2);
+bool register_0(remu* emu, void* command1, void* command2);
 
 
 #endif

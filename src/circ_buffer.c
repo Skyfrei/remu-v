@@ -46,4 +46,9 @@ size_t get_size(circ_buffer* circ){
 static int8_t* last_memory_address(circ_buffer* circ){
     return circ->memory + (circ->memory_size - 1);
 }
+void* get_head(circ_buffer* circ){
+    return circ->head;
+}
+
+
 

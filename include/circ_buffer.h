@@ -21,5 +21,7 @@ typedef struct{
 void init_circ_buffer(circ_buffer* circ);
 void insert(circ_buffer* circ, int8_t val);
 void pop(circ_buffer* circ);
+void* get_head(circ_buffer* circ);
 size_t get_size(circ_buffer* circ);
 static int8_t* last_memory_address(circ_buffer* circ);
+
