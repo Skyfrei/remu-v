@@ -3,11 +3,11 @@
 #include <string.h>
 #include <emu.h>
 
-void accept_input(int arg_num, char* argv[]){
+char* accept_input(int arg_num, char* argv[]){
     char* file_name;
 
     if (arg_num <= 1)
-        return;
+        exit(1);
 
     for (int i = 1; i < arg_num; i++){
         if (strcmp(argv[i], "-h") == 0){
@@ -20,16 +20,15 @@ void accept_input(int arg_num, char* argv[]){
             }
         }
     }
+
+    return file_name;
 }
 
 int main(int argc, char* argv[]){
-    accept_input(argc, argv);
-
+    char* file_name = accept_input(argc, argv);
     remu emulator;
-    init_remu(&emulator);
+    init_remu(&emulator, file_name);
     
-
      
-    
     exit(0);
 }

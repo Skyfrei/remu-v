@@ -4,16 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void init_remu(remu* emu, char* file_name){
+void init_remu(remu* emu){
     //init_circ_buffer(&emu->memory);
-    emu->memory = malloc(EMU_MEMORY * sizeof(void*));
-    emu->assembly_code_buffer = malloc(100 * 1024 * sizeof(char));
-
-    //memset(emu->assembly_code_buffer, 0, 10 * 1024 * sizeof(char));
+    emu->memory = malloc(EMU_MEMORY * sizeof(int8_t));
+    emu->assembly_code_buffer = malloc(EMU_MEMORY / 1024 * sizeof(char));
     memset(emu->memory, 0, EMU_MEMORY * sizeof(int8_t));
     memset(emu->registers, 0, 32);
-
-    size_t assembly_size = parse_assembly(emu, file_name); 
 }
 
 void* get_temporary_register(remu* emu, bool floating){
@@ -105,36 +101,15 @@ static void* check_register(remu* emu, void* reg){
         return nullptr;
 }
 
-static size_t parse_assembly(remu* emu, const char* file_name){
+static size_t parse_assembly(const char* file_name){
     FILE* file = fopen(file_name, "r"); 
     if (!file){
         printf("Failed to open file");
     }
 
-    size_t code_number = fread(emu->assembly_code_buffer, sizeof(char), 100 * 1024 * sizeof(char), file);
-    if (code_number == 0){
-        exit(1);
-    }
-
-    uint8_t line_length = 0;
-    for (int i = 0; i < code_number; i++){
-        if (*(char*)(emu->assembly_code_buffer + i) == '\n'){
-            for(int j = code_number + 1;  j < code_number + 1 + line_length; j++){
-                printf("%c", *(char*)(emu->assembly_code_buffer + j)); 
-            }
-            memset(emu->assembly_code_buffer + code_number, 0, line_length);
-            line_length = 0;
-            printf("\n");
-            continue;
-        }
-
-        *(char*)(emu->assembly_code_buffer + (code_number + line_length + 1)) = *(char*)(emu->assembly_code_buffer + i);
-        line_length++;
-        *(uint8_t*)(emu->assembly_code_buffer + code_number) = line_length;
-    }
     
 
-    return code_number;
+    return 2;
 }
 
 

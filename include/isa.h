@@ -11,8 +11,6 @@
 
 #include <stdbool.h>
 
-
-
 typedef enum {
     X0,
     LI,
@@ -37,7 +35,6 @@ typedef enum {
 
 typedef struct remu remu;
 
-
 void load_immediate(remu* emu, void* command1, void* command2);
 void add(remu* emu, void* command1, void* command2);
 void sub(remu* emu, void* command1, void* command2);
@@ -51,6 +48,5 @@ void slt(remu* emu, void* command1, void* command2);
 void sltu(remu* emu, void* command1, void* command2);
 void delete(remu* emu, void* command1, void* command2);
 bool register_0(remu* emu, void* command1, void* command2);
-
 
 #endif

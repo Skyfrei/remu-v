@@ -2,8 +2,8 @@
 #include <emu.h>
 
 void load_immediate(remu* emu, void* command1, void* command2){
-    void* reg = get_temporary_memory(emu, false);
-    void* reg2 = get_temporary_memory(emu, false);
+    void* reg = get_temporary_register(emu, false);
+    void* reg2 = get_temporary_register(emu, false);
     reg = command1;
     reg2 = command2;
     return;
